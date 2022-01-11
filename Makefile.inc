@@ -59,6 +59,9 @@ endif
 
 ifneq (,$(filter ovn,$(_using)))
 PRELOAD_IMAGES += submariner-networkplugin-syncer
+SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.ovn.yml
+else
+SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.yml
 endif
 
 ifdef FOCUS

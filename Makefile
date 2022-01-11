@@ -13,12 +13,6 @@ ifneq (,$(DAPPER_HOST_ARCH))
 
 # Running in Dapper
 
-ifneq (,$(filter ovn,$(_using)))
-SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.ovn.yml
-else
-SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.yml
-endif
-
 override E2E_ARGS += --nolazy_deploy cluster1
 
 include Makefile.inc
